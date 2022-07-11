@@ -1,0 +1,67 @@
+@import "../../styles/variables.scss";
+
+.job-results {
+  &__results-count {
+    margin-top: $spacing-lg;
+    padding: $spacing-md;
+    color: black;
+    border-radius: $borderRadius;
+    background-color: $bg-dimmer;
+  }
+
+  &__jobs-container {
+    &__job {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      width: 800px;
+      box-shadow: $primaryShadow;
+      margin-top: $spacing-lg;
+      text-align: left;
+      padding: $spacing-lg;
+
+      &__column-a {
+        &__title {
+          &__labels {
+            display: flex;
+
+            &__poster-verified > div,
+            &__posted-time > div {
+              display: flex;
+              align-items: center;
+              p {
+                margin-left: $spacing-sm;
+              }
+            }
+            
+
+            &__poster-verified > div {
+              svg {
+                color: rgb(37, 185, 249);
+              }
+            }
+
+            &__posted-time > div {
+              margin-left: $spacing-lg;
+
+              svg {
+                color: rgb(82, 216, 214);
+              }
+            }
+          }
+        }
+      }
+      &__column-b {
+        &__salary {
+          &__amount {
+
+          }
+
+          &__frequency {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

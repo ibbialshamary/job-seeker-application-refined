@@ -1,0 +1,59 @@
+@import "../../styles/variables.scss";
+
+.job-search {
+  &__search-container {
+    width: 400px;
+
+    @include breakpoint(md) {
+      width: 600px;
+    }
+
+    @include breakpoint(lg) {
+      width: 800px;
+    }
+
+    height: 60px;
+    margin-top: $spacing-lg;
+    box-shadow: $primaryShadow;
+    border-radius: $borderRadiusLg;
+
+    &__inputs {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      &__input-container {
+        position: relative;
+        width: 100%;
+
+        svg {
+          position: absolute;
+          top: 50%;
+          left: calc($spacing-xlg / 2);
+          transform: translate(-50%, -50%);
+        }
+
+        input {
+          padding: 0 $spacing-lg 0 $spacing-xlg;
+          width: 100%;
+          border: 1px solid rgba($dark, 0.1);
+          height: 100%;
+          font-size: $font-s;
+        }
+      }
+      &__input-container--border-left {
+        input {
+          border-top-left-radius: $borderRadiusLg;
+          border-bottom-left-radius: $borderRadiusLg;
+        }
+      }
+
+      button {
+        width: 20%;
+        height: 100%;
+        border-radius: 0;
+        border-top-right-radius: $borderRadiusLg;
+        border-bottom-right-radius: $borderRadiusLg;
+      }
+    }
+  }
+}

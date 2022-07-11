@@ -1,0 +1,87 @@
+@import "../../styles/variables.scss";
+
+.register {
+  width: 800px;
+  @include screenPadding();
+
+  &__body {
+    &__names, &__passwords {
+      margin-bottom: $spacing-md;
+      display: flex;
+      &__first,
+      &__last,
+      &__password,
+      &__confirm-password {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        flex-grow: 1;
+        input {
+          border: 1px solid rgba($dark, 0.1);
+          font-size: $font-s;
+          border-radius: $borderRadius;
+          padding: 20px;
+        }
+
+        label {
+          margin-bottom: $spacing-sm;
+        }
+      }
+
+      &__first, &__password {
+          margin-right: $spacing-sm;
+
+      }
+
+      &__last, &__confirm-password {
+          margin-left: $spacing-sm;
+      }
+    }
+
+    &__email,
+    &__password,
+    &__confirm-password {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-bottom: $spacing-md;
+
+      label {
+        margin-bottom: $spacing-sm;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid rgba($dark, 0.1);
+        font-size: $font-s;
+        border-radius: $borderRadius;
+        padding: 20px;
+      }
+    }
+
+    &__password {
+      &__input {
+        position: relative;
+
+        input {
+          padding-right: 25%;
+        }
+      }
+    }
+
+    &__cta {
+      button {
+        margin-top: $spacing-md;
+        width: 100%;
+      }
+    }
+
+    &__register-instead {
+      margin-top: $spacing-md;
+      text-align: left;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

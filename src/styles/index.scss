@@ -1,0 +1,49 @@
+@import "./variables.scss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  font-family: $Poppins;
+  color: $dark;
+}
+
+#root {
+  height: 100%;
+}
+
+button {
+  @include button();
+}
+
+input {
+  
+}
+
+h1 {
+  @include primaryHeading();
+}
+
+h2 {
+  @include secondaryHeading();
+}
+
+h3 {
+  @include miniHeading();
+}
+
+.container {
+  @include centerContainer();
+
+  &--bg-dimmer {
+    background-color: $bg-dimmer;
+  }
+}
+
+p {
+  @include primaryParagraph;
+}

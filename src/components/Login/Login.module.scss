@@ -1,0 +1,73 @@
+@import "../../styles/variables.scss";
+
+.login {
+  width: 800px;
+  @include screenPadding();
+
+
+  &__body {
+    &__email,
+    &__password {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-bottom: $spacing-md;
+
+      label {
+        margin-bottom: $spacing-sm;
+      }
+
+      input {
+        width: 100%;
+        border: 1px solid rgba($dark, 0.1);
+        font-size: $font-s;
+        border-radius: $borderRadius;
+        padding: 20px;
+      }
+    }
+
+    &__password {
+      &__input {
+        position: relative;
+
+        input {
+          padding-right: 25%;
+        }
+
+        &__reset-password {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+          margin-right: $spacing-lg;
+          a {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    &__remember-me {
+      text-align: left;
+      display: flex;
+      label {
+        margin-left: $spacing-sm;
+      }
+    }
+
+    &__cta {
+      button {
+        margin-top: $spacing-lg;
+        width: 100%;
+      }
+    }
+
+    &__register-instead {
+      margin-top: $spacing-md;
+      text-align: left;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

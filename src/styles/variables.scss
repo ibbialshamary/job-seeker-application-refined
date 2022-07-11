@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+$Poppins: "Poppins", sans-serif;
+
+// colors
+$dark: rgb(29, 29, 29);
+$light: #fff;
+$primary: rgb(69, 63, 220);
+$primary-darker: rgb(58, 54, 189);
+$bg: white;
+$bg-dimmer: rgb(246, 247, 252);
+
+// spacing
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+$spacing-xlg: 64px;
+$spacing-xxlg: 128px;
+
+// max-width
+$max-width: 1920px;
+
+// transition
+$primaryTransition: all ease-in-out 0.5s;
+
+// shadow
+$primaryShadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+// border radius
+$borderRadius: 12px;
+$borderRadiusLg: 24px;
+
+// header height
+$headerHeight: 100px;
+
+// font size
+$font-xs: 12px;
+$font-s: 14px;
+$font-m: 18px;
+$font-l: 32px;
+$font-xl: 40px;
+$font-xxl: 64px;
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    // 768px
+    @media (min-width: 48em) {
+      @content;
+    }
+  }
+
+  @if $point == lg {
+    // 1024px
+    @media (min-width: 1024px) {
+      @content;
+    }
+  }
+}
+
+@mixin button {
+  cursor: pointer;
+  outline: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: $borderRadiusLg;
+  font-size: $font-s;
+  font-family: inherit;
+  background: $primary;
+  color: $light;
+  border: 1px solid transparent;
+  transition: 0.3s ease all;
+
+  &:hover {
+    background: $primary-darker;
+    color: $light;
+    border-color: $primary;
+    @include breakpoint(md) {
+      background: rgba($primary, 0.1);
+      color: $primary;
+    }
+  }
+
+  &:active {
+    border-color: $primary;
+    background: linear-gradient(rgba($primary, 0.2), rgba($primary, 0.3));
+    color: $primary;
+  }
+}
+
+@mixin buttonSecondary {
+  @include breakpoint(md) {
+    background: $light;
+    border-color: $primary;
+    color: $primary;
+  }
+}
+
+@mixin centerContainer {
+  background: $bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  // margin-top: $spacing-xlg;
+  padding: $spacing-xlg 0;
+}
+
+@mixin primaryHeading {
+  font-size: $font-l;
+  font-weight: 500;
+  margin-bottom: $spacing-md;
+  @include breakpoint(md) {
+    font-size: $font-xl;
+  }
+
+  @include breakpoint(lg) {
+    font-size: $font-xxl;
+  }
+}
+
+@mixin secondaryHeading {
+  font-size: $font-l;
+  font-weight: 500;
+  margin-bottom: $spacing-md;
+  @include breakpoint(md) {
+    font-size: $font-l;
+  }
+
+  @include breakpoint(lg) {
+    font-size: $font-xl;
+  }
+}
+
+@mixin miniHeading {
+  font-size: $font-s;
+  font-weight: 600;
+  // margin-bottom: $spacing-md;
+  @include breakpoint(md) {
+    font-size: $font-m;
+  }
+}
+
+@mixin primaryParagraph {
+  font-weight: 200;
+  font-size: $font-s;
+
+  @include breakpoint(lg) {
+    font-size: $font-m;
+  }
+}
+
+@mixin secondaryParagraph {
+  font-weight: 200;
+  font-size: $font-xs;
+
+  @include breakpoint(md) {
+    font-size: $font-s;
+  }
+}
+
+@mixin screenPadding() {
+  padding: 0 1.5rem;
+
+  @include breakpoint(md) {
+    padding: 0 3rem;
+  }
+
+  @include breakpoint(lg) {
+    padding: 0 3rem;
+  }
+}

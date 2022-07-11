@@ -1,0 +1,80 @@
+@import "../../styles/variables.scss";
+
+.featured {
+  max-width: $max-width;
+
+  &__title {
+    h2 {
+      @include secondaryHeading();
+      span {
+        color: $primary;
+      }
+    }
+  }
+
+  &__jobs {
+    display: grid;
+    padding: 10px;
+    grid-template-columns: auto;
+    @include breakpoint(md) {
+      grid-template-columns: auto auto auto auto;
+    }
+    &__item {
+      position: relative;
+      border: $bg-dimmer solid 2px;
+      border-radius: $borderRadius;
+      text-align: left;
+      padding: $spacing-lg;
+      margin: $spacing-md $spacing-lg $spacing-lg $spacing-lg;
+
+      width: 350px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      &__content {
+        &__details {
+          h1,
+          p {
+            margin-bottom: $spacing-sm;
+          }
+
+          p {
+            @include primaryParagraph();
+          }
+          p:nth-child(2) {
+            @include secondaryParagraph();
+          }
+        }
+
+        &__salaryapply {
+          margin-top: $spacing-xlg;
+          display: flex;
+          justify-content: space-between;
+
+          &__salary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            p {
+              display: flex;
+              span {
+                font-weight: 500;
+              }
+            }
+          }
+
+          &__apply {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            button {
+              border-radius: $borderRadius;
+            }
+          }
+        }
+      }
+    }
+  }
+}

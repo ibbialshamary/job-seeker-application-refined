@@ -1,0 +1,65 @@
+@import "../../styles/variables.scss";
+
+.categories {
+  width: 100%;
+  max-width: $max-width;
+  // margin-bottom: $spacing-xlg;
+  &__title {
+    h2 {
+      span {
+        color: $primary;
+      }
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 25px;
+    @include screenPadding();
+
+    @include breakpoint(md) {
+      margin-top: $spacing-lg;
+      grid-template-columns: auto auto auto;
+    }
+
+    @include breakpoint(lg) {
+      grid-template-columns: auto auto auto auto;
+    }
+
+    &__category-item {
+      // margin: 10px;
+      background-color: $bg;
+      border-radius: $borderRadius;
+      font-size: 30px;
+      text-align: left;
+      transition: $primaryTransition;
+      box-shadow: $primaryShadow;
+      cursor: pointer;
+      position: relative;
+
+      &__content {
+        svg {
+          position: absolute;
+          left: calc($spacing-xlg / 2);
+          transform: translateX(-50%);
+        }
+
+        padding: $spacing-lg;
+        padding-left: $spacing-xlg;
+        h3 {
+          margin: 0 0 $spacing-sm 0;
+        }
+
+        p {
+          @include secondaryParagraph();
+        }
+      }
+
+      &:hover {
+        background-color: $primary;
+        color: $light;
+      }
+    }
+  }
+}
